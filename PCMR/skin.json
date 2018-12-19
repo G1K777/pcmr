@@ -1,0 +1,54 @@
+{
+	"name": "PCMR",
+	"version": "1.0",
+	"author": "...",
+	"url": "https://www.mediawiki.org/wiki/Skin:PCMR",
+	"descriptionmsg": "pcmr-desc",
+	"namemsg": "skinname-pcmr",
+	"license-name": "CC0-1.0",
+	"type": "skin",
+	"ValidSkinNames": {
+		"pcmr": "PCMR"
+	},
+	"MessagesDirs": {
+		"PCMR": [
+			"i18n"
+		]
+	},
+	"ResourceModules": {
+		"skins.pcmr": {
+			"class": "ResourceLoaderSkinModule",
+			"styles": {
+				"resources/libraries/normalise.css": {
+					"media": "screen"
+				},
+				"resources/screen-common.less": {
+					"media": "screen"
+				},
+				"resources/screen-desktop.less": {
+					"media": "screen and (min-width: 751px)"
+				},
+				"resources/screen-mobile.less": {
+					"media": "screen and (max-width: 750px)"
+				},
+				"resources/print.css": {
+					"media": "print"
+				}
+			}
+		},
+		"skins.pcmr.js": {
+			"scripts": [
+				"resources/main.js"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteSkinPath": "PCMR"
+	},
+	"AutoloadClasses": {
+		"SkinPCMR": "includes/SkinPCMR.php",
+		"PCMRTemplate": "includes/PCMRTemplate.php"
+	},
+	"manifest_version": 1
+}
