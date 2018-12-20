@@ -1,0 +1,61 @@
+@import "variables.less";
+
+@keyframes animatedgradient {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+.rborder {
+	background: @panel_bg_color;
+	position: relative;
+	&:not(#user-tools){
+		border-radius: @panel_border_radius;
+	}
+	&:after {
+		content:'';
+		position: absolute;
+		top: calc(~"-1 * 2px");
+		height: calc(~"100% + 2px * 2");
+		width:100%;
+		background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+		border-radius: @panel_border_radius;
+		z-index: -1;
+		animation: rborderAnim 3s ease alternate infinite;
+		background-size: 300% 300%;
+	}
+
+	@keyframes rborderAnim {
+		0% { background-position: 0% 50%; }
+		50% { background-position: 100% 50%; }
+		100% { background-position: 0% 50%; }
+	}
+}
+
+.rfont, .new{
+	background-image: linear-gradient(
+		60deg,
+		hsl(0, 100%, 50%) 0%,
+		hsl(45, 100%, 50%) 12.5%,
+		hsl(90, 100%, 50%) 25.0%,
+		hsl(135, 100%, 50%) 37.5%,
+		hsl(180, 100%, 50%) 50.0%,
+		hsl(225, 100%, 50%) 62.5%,
+		hsl(270, 100%, 50%) 75.0%,
+		hsl(315, 100%, 50%) 87.5%,
+		hsl(360, 100%, 50%) 100%
+		);
+	color: transparent!important;
+	-webkit-background-clip: text;
+	background-size: 600%;
+	animation: rfontAnim 30s linear infinite;
+
+	@keyframes rfontAnim {
+		0% { background-position: 0%; }
+		100% { background-position: 600%; }
+	}
+
+	&:hover,&:active{
+		color:transparent!important;
+	}
+  }

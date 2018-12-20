@@ -1,0 +1,43 @@
+/* Styles appear on displays over 750 pixels wide */
+
+@import "variables.less";
+
+@media only screen and (min-width: 1101px) {
+	#user-tools{
+		border-radius: @panel_border_radius;
+		
+	}
+	.rborder:after{
+		left: calc(~"-1 * 2px");
+		width: calc(~"100% + 2px * 2");
+	}
+}
+
+
+header{
+	#user-tools {
+		display: inline-flex;
+		#p-personal{
+			width: calc(~"100% - 230px");
+			ul{
+				text-align: right;
+			}
+		}
+		#p-search{
+			border-radius: 0;
+			width: 45%;
+		}
+		
+	}
+}
+
+#site-navigation {
+	ul {
+		list-style-type: none;
+		margin: 0;
+	}
+	li {
+		padding-right: 1em;
+		display: inline-block;
+	}
+}

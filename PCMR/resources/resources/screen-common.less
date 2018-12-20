@@ -1,0 +1,205 @@
+// hidden stuff
+#page-tools h3,
+#p-search h3,
+#p-personal h3,
+#searchGoButton {
+	display: none;
+}
+
+@import "variables.less";
+
+*{
+	box-sizing: border-box;
+	margin:0;
+	padding:0;
+}
+
+html{
+	background: @website_bg_color;
+	color: @website_font_color;
+	font-family: @website_font;
+}
+
+body{
+    padding: 2px; // Bottom overlay scroll fix (rainbow border).
+}
+
+h1,h2,h3,h4,h5,h6{
+	color:@content_heading_color;
+}
+
+header a, footer a{
+	color: @panel_a_color;
+	&:hover{
+		color:@panel_a_color_hover;
+		text-decoration: none;
+		&:span{
+			color: inherit;
+		}
+	}
+	&:visited{
+		color: @panel_a_color;
+		&:hover{
+			color: @panel_a_color_hover;
+		}
+	}
+}
+
+// Page layout
+
+header,main,footer{
+	max-width: @pageWidth;
+	margin: 0 auto;
+}
+
+header{
+	padding-bottom: 1em;
+
+	#user-tools{
+		width: 100%;
+		margin-bottom:.6em;
+		line-height: 2em;
+
+		#p-search{
+			border-radius: @panel_border_radius;
+			input{
+				background: @panel_bg_color;
+				color: #eee;
+				padding: .2em;
+				border:0;
+				border-bottom:1px solid #333;
+				border-radius:4px;
+				&:focus{
+					outline: none;
+					border-color: gold;
+				}
+			}
+
+			#searchInput{
+				width: calc(~"100% - 4px");
+				text-align: center;
+				color:#eee;
+			}
+			
+		}
+
+		#p-personal{
+
+			ul{
+				text-align: center;
+			}
+
+			#pt-userpage a, #pt-mytalk a{
+				color:gold;
+			}
+		}
+	}
+}
+
+main{
+	padding:20px;
+
+	.image{
+		display:block;
+	}
+
+	.toc{
+		background: @panel_bg_color;
+
+		a{
+			&:hover{
+				text-decoration: none;
+			}
+			.tocnumber{
+				color: #aaa;
+			}
+			.toctext{
+				color: #ab9000;
+				&:hover{
+					color:gold;
+				}
+			}
+
+		}
+	}
+
+	#catlinks{
+		background: @panel_bg_color;
+		border: @panel_border;
+		border-radius: @panel_border_radius;
+	}
+}
+
+// Footer
+footer {
+	padding-top: 20px;
+
+	ul {
+		margin-top: 1em;
+	}
+}
+#footer-icons {
+	float: right;
+	margin: 0 0 1em 1em;
+}
+
+
+
+#p-logo {
+	display: inline-flex;
+	
+	a.mw-wiki-logo {
+		display: block;
+		content: '';
+		width: 10em;
+		height: 10em;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size:contain;
+	}
+
+	#p-banner{
+		font-size: 5em;
+		line-height: 2em;
+	}
+}
+
+
+// Some content stuff
+.firstHeading {
+	margin-top: 0;
+}
+
+.mw-indicators {
+	float: right;
+	margin: 1.5em 0 0 1em;
+}
+
+pre {
+	overflow: auto;
+	white-space: pre-wrap;
+}
+
+.center,
+.center * {
+	margin: auto;
+	text-align: center;
+}
+
+// Splatter the menus and tools at the bottom
+#mw-footer,
+#page-tools,
+#p-personal {
+	ul {
+		list-style-type: none;
+		margin: 0;
+	}
+	li {
+		padding-right: 1em;
+		display: inline-block;
+	}
+}
+
+#page-tools .mw-portlet {
+	display: inline-block;
+}
