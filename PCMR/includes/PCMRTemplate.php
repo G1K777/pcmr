@@ -10,75 +10,73 @@ class PCMRTemplate extends BaseTemplate {
 	 */
 	public function execute() {
 		$html = '';
-		$html .= $this->get( 'headelement' );
-
-		$html .= Html::rawElement( 'div', [ 'id' => 'mw-wrapper' ],
-			Html::rawElement( 'div', [ 'class' => 'mw-body', 'role' => 'main' ],
-				$this->getSiteNotice() .
-				$this->getNewTalk() .
-				$this->getIndicators() .
-				Html::rawElement( 'h1',
-					[
-						'class' => 'firstHeading',
-						'lang' => $this->get( 'pageLanguage' )
-					],
-					$this->get( 'title' )
-				) .
-				Html::rawElement( 'div', [ 'id' => 'siteSub' ],
-					$this->getMsg( 'tagline' )->parse()
-				) .
-				Html::rawElement( 'div', [ 'class' => 'mw-body-content' ],
-					Html::rawElement( 'div', [ 'id' => 'contentSub' ],
-						$this->getPageSubtitle() .
-						Html::rawElement(
-							'p',
-							[],
-							$this->get( 'undelete' )
-						)
-					) .
-					$this->get( 'bodycontent' ) .
-					$this->getClear() .
-					Html::rawElement( 'div', [ 'class' => 'printfooter' ],
-						$this->get( 'printfooter' )
-					) .
-					$this->getCategoryLinks() .
-					$this->getDataAfterContent() .
-					$this->get( 'debughtml' )
-				)
-			) .
-			Html::rawElement( 'div', [ 'id' => 'mw-navigation' ],
-				Html::rawElement(
-					'h2',
-					[],
-					$this->getMsg( 'navigation-heading' )->parse()
-				) .
-				$this->getLogo() .
-				$this->getSearch() .
-				// User profile links
-				Html::rawElement(
-					'div',
-					[ 'id' => 'user-tools' ],
-					$this->getUserLinks()
-				) .
-				// Page editing and tools
-				Html::rawElement(
-					'div',
-					[ 'id' => 'page-tools' ],
-					$this->getPageLinks()
-				) .
-				// Site navigation/sidebar
-				Html::rawElement(
-					'div',
-					[ 'id' => 'site-navigation' ],
-					$this->getSiteNavigation()
-				)
-			) .
-			$this->getFooter()
-		);
-
-		$html .= $this->getTrail();
-		$html .= Html::closeElement( 'body' );
-		$html .= Html::closeElement( 'html' );
+		$html .= $this->get( 'headelement' ).
+		Html::rawElement( 'header', [ 'id' => 'mw-navigation' ],
+			$this->getLogo().
+			// User profile links
+			Html::rawElement(
+				'div',
+				[
+					'id' => 'user-tools',
+					'class' => 'rborder'
+				],
+				$this->getSearch().
+				$this->getUserLinks()
+			).
+			// Site navigation/sidebar
+			Html::rawElement(
+				'div',
+				[ 'id' => 'site-navigation' ],
+				$this->getSiteNavigation()
+			).
+			// Page editing and tools
+			Html::rawElement(
+				'div',
+				[ 'id' => 'page-tools' ],
+				$this->getPageLinks()
+			)
+		).
+		Html::rawElement( 'main',
+			[
+				'role' => 'main',
+				'class' => 'rborder'
+			],
+			$this->getSiteNotice().
+			$this->getNewTalk().
+			$this->getIndicators().
+			Html::rawElement( 'h1',
+				[
+					'class' => 'firstHeading rtext',
+					'lang' => $this->get( 'pageLanguage' )
+				],
+				$this->get( 'title' )
+			).
+			Html::rawElement( 'div', [ 'id' => 'siteSub' ],
+				$this->getMsg( 'tagline' )->parse()
+			).
+			Html::rawElement( 'div', [ 'class' => 'mw-body-content' ],
+				Html::rawElement( 'div', [ 'id' => 'contentSub' ],
+					$this->getPageSubtitle().
+					Html::rawElement(
+						'p',
+						[],
+						$this->get( 'undelete' )
+					)
+				).
+				$this->get( 'bodycontent' ).
+				$this->getClear().
+				Html::rawElement( 'div', [ 'class' => 'printfooter' ],
+					$this->get( 'printfooter' )
+				).
+				$this->getCategoryLinks().
+				$this->getDataAfterContent().
+				$this->get( 'debughtml' )
+			)
+		).
+		$this->getFooter().
+		$this->getTrail().
+		Html::closeElement( 'body' ).
+		Html::closeElement( 'html' );
 
 		echo $html;
 	}
@@ -108,7 +106,7 @@ class PCMRTemplate extends BaseTemplate {
 				'a',
 				[
 					'id' => 'p-banner',
-					'class' => 'mw-wiki-title',
+					'class' => 'mw-wiki-title rfont',
 					'href' => $this->data['nav_urls']['mainpage']['href']
 				] + Linker::tooltipAndAccesskeyAttribs( 'p-logo' ),
 				$this->getMsg( 'sitetitle' )->text()
@@ -129,19 +127,19 @@ class PCMRTemplate extends BaseTemplate {
 			[
 				'action' => htmlspecialchars( $this->get( 'wgScript' ) ),
 				'role' => 'search',
-				'class' => 'mw-portlet',
+				//'class' => 'mw-portlet', // #Needed? mw-portlet
 				'id' => 'p-search'
 			]
 		);
-		$html .= Html::hidden( 'title', htmlspecialchars( $this->get( 'searchtitle' ) ) );
-		$html .= Html::rawElement(
+		$html .= Html::hidden( 'title', htmlspecialchars( $this->get( 'searchtitle' ) ) ).
+		Html::rawElement(
 			'h3',
 			[],
 			Html::label( $this->getMsg( 'search' )->escaped(), 'searchInput' )
-		);
-		$html .= $this->makeSearchInput( [ 'id' => 'searchInput' ] );
-		$html .= $this->makeSearchButton( 'go', [ 'id' => 'searchGoButton', 'class' => 'searchButton' ] );
-		$html .= Html::closeElement( 'form' );
+		).
+		$this->makeSearchInput( [ 'id' => 'searchInput' ] ).
+		$this->makeSearchButton( 'go', [ 'id' => 'searchGoButton', 'class' => 'searchButton' ] ).
+		Html::closeElement( 'form' );
 
 		return $html;
 	}
@@ -419,7 +417,7 @@ class PCMRTemplate extends BaseTemplate {
 		$html = '';
 
 		if ( count( $validFooterIcons ) + count( $validFooterLinks ) > 0 ) {
-			$html .= Html::openElement( 'div', [
+			$html .= Html::openElement( 'footer', [
 				'id' => 'footer-bottom',
 				'role' => 'contentinfo',
 				'lang' => $this->get( 'userlang' ),
