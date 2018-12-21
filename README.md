@@ -9,7 +9,7 @@ The default mediawiki skins where too 2000.. :3
 ![Screenshot 1][screenshot1 =250x]
 
 ### Mobile (750px width)
-![Screenshot 2][screenshot2 =250x]
+![Screenshot 2](screenshot2 | width=250x)
 
 
 
