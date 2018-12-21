@@ -9,7 +9,7 @@ The default mediawiki skins where too 2000.. :3
 ![Screenshot 1][screenshot1 =250x]
 
 ### Mobile (750px width)
-![Screenshot 2](screenshot2 | width=250x)
+![Screenshot 2](http://pcmasterrace.wiki/skins/PCMR/screenshots/mobile_750px.jpg | width=250x)
 
 
 
