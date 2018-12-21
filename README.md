@@ -6,11 +6,10 @@ PCMasterRace.wiki SKIN
 The default mediawiki skins where too 2000.. :3
 
 ### Desktop
-![Screenshot 1][screenshot1 =250x]
+![Screenshot 1][screenshot1]
 
 ### Mobile (750px width)
-![Screenshot 2](http://pcmasterrace.wiki/skins/PCMR/screenshots/mobile_750px.jpg | width=250x)
-![](http://pcmasterrace.wiki/skins/PCMR/screenshots/mobile_750px.jpg | width=100)
+![Screenshot 2][screenshot2]
 
 
 
