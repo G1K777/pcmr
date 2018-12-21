@@ -1,5 +1,5 @@
 [screenshot1]: http://pcmasterrace.wiki/skins/PCMR/screenshots/1080p.jpg "screenshot 1"
-[screenshot2]: http://pcmasterrace.wiki/skins/PCMR/screenshots/750px_mobile.jpg "screenshot 2"
+[screenshot2]: http://pcmasterrace.wiki/skins/PCMR/screenshots/mobile_750px.jpg "screenshot 2"
 # PCMR
 PCMasterRace.wiki SKIN
 
