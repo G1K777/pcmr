@@ -1,11 +1,15 @@
 [screenshot1]: http://pcmasterrace.wiki/skins/PCMR/screenshots/1080p.jpg "screenshot 1"
+[screenshot2]: http://pcmasterrace.wiki/skins/PCMR/screenshots/750px_mobile.jpg "screenshot 2"
 # PCMR
 PCMasterRace.wiki SKIN
 
 The default mediawiki skins where too 2000.. :3
 
+### Desktop
 ![Screenshot 1][screenshot1]
 
+### Mobile (750px width)
+![Screenshot 2][screenshot2]
 
 
 
