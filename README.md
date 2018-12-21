@@ -1,4 +1,4 @@
-[screenshot1]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+[screenshot1]: http://pcmasterrace.wiki/skins/PCMR/screenshots/1080p.jpg "screenshot 1"
 # PCMR
 PCMasterRace.wiki SKIN
 
