@@ -1,10 +1,71 @@
-// @import "mediawiki.mixins"; Not used yet
+// Global (Elite xd)
+@pageWidth: 1080px;
 
-@width: 66em;
-@border: #ccc;
+// Website
+@website_font: calibri;
+@website_font_color: #eee;
+@website_bg_color: #111;
 
-// To hide objects, but keep them accessible for screen-readers
-.hidden() {
-	position: absolute;
-	top: -9999px;
+// Panels
+@panel_bg_color: #000;
+@panel_a_color: #aaa;
+@panel_a_color_hover: #fff!important;
+@panel_border: 2px solid #222;
+@panel_border_radius: 4px;
+
+// Content
+@content_heading_color: gold;
+
+
+// LINK COLORS
+.whitelink(@color: #aaa; @hcolor: #eee;){
+    color: @color;
+    &:hover{
+        color: @hcolor!important;
+    }
+    &:visited{
+        color:@color;
+    }
+    &:active{
+        color:@hcolor;
+    }
+}
+
+.greenlink(@color: green; @hcolor: lime;){
+    color: @color;
+    &:hover{
+        color: @hcolor!important;
+    }
+    &:visited{
+        color:@color;
+    }
+    &:active{
+        color:@hcolor;
+    }
+}
+
+.bluelink(@color: #00adad; @hcolor: aqua;){
+    color: @color;
+    &:hover{
+        color: @hcolor!important;
+    }
+    &:visited{
+        color:@color;
+    }
+    &:active{
+        color:@hcolor;
+    }
+}
+
+.orangelink(@color: #885800; @hcolor: orange;){
+    color: @color;
+    &:hover{
+        color: @hcolor!important;
+    }
+    &:visited{
+        color:@color;
+    }
+    &:active{
+        color:@hcolor;
+    }
 }

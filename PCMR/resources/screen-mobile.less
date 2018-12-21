@@ -2,20 +2,24 @@
 
 // @import "variables.less"; (Not used here)
 
-#p-logo {
-	width: 6em;
+#p-search{
+	width: 100%;
+	#searchInput {
+		width: calc(100% - 4px);
+	}
+}
 
-	// Make the logo smaller because we're dealing with less space here
-	// Note that background-size doesn't necessarily work in older browsers, but whatever
+#p-logo {
+	margin-left: calc(~"(100vw - 250px) / 2");
+	
 	a.mw-wiki-logo {
-		margin: 0 0 1em 1em;
-		width: 5em;
-		height: 5em;
-		background-size: contain;
+		width: 2em;
+		height: 2em;
 	}
 }
 #p-banner {
-	display: none;
+	font-size: 2em;
+	line-height: 1em;
 }
 
 // Full-width thumbnails (to avoid having really squished text around them)

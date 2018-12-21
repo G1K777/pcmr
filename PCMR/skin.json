@@ -33,6 +33,12 @@
 				},
 				"resources/print.css": {
 					"media": "print"
+				},
+				"resources/magic.less": {
+					"media": "screen"
+				},
+				"resources/screen-panels.less": {
+					"media": "screen"
 				}
 			}
 		},

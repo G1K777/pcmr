@@ -46,7 +46,7 @@ class PCMRTemplate extends BaseTemplate {
 			$this->getIndicators().
 			Html::rawElement( 'h1',
 				[
-					'class' => 'firstHeading rtext',
+					'class' => 'firstHeading rfont',
 					'lang' => $this->get( 'pageLanguage' )
 				],
 				$this->get( 'title' )

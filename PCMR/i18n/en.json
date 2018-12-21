@@ -1,7 +1,7 @@
 {
 	"@metadata": {
-		"authors": [ "..." ]
+		"authors": [ "PCMasterRace.wiki" ]
 	},
-	"skinname-example": "Example",
-	"example-desc": "An example skin showcasing the best practices"
+	"skinname-pcmr": "PCMR",
+	"pcmr-desc": "Skin made by the PCMR community, github.com/g1k777/pcmr/."
 }

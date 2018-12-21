@@ -2,13 +2,43 @@
 
 @import "variables.less";
 
-#site-navigation {
-	ul {
-		list-style-type: none;
-		margin: 0;
+@media only screen and (min-width: 1101px) {
+	.rborder{
+		border-radius: @panel_border_radius;
+		
 	}
-	li {
-		padding-right: 1em;
-		display: inline-block;
+	.rborder:after{
+		left: calc(~"-1 * 2px");
+		width: calc(~"100% + 2px * 2");
+	}
+}
+
+
+header{
+	#p-banner{
+		font-size: 5em;
+		line-height: 2em;
+	}
+
+	#user-tools {
+		display: inline-flex;
+		#p-personal{
+			width: calc(~"100% - 230px");
+			ul{
+				text-align: right;
+			}
+		}
+		#p-search{
+			border-radius: 0;
+			width: 45%;
+		}
+		
+	}
+
+	#page-tools{
+		
+		#p-actions{
+			float: right;
+		}
 	}
 }
